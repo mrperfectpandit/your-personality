@@ -18,17 +18,16 @@
 ## 📈Datasets 
 [MBTI-Dataset](https://www.kaggle.com/datasnaek/mbti-type) <br>
 
-## Table of Content
+## 📝Table of Content
   * [Overview](#Overview)
   * [Motivation](#Motivation)
-  * [Features](#Features)
-  * [Samples Pictures or Demo](#Samples-Pictures-or-Demo)
-  * [Video Demo](#Video-Demo)
   * [Installation and run](#Installation-and-run)
+  * [what is MBTI?](#MBTI)
+  * [MBTI Types](#MBTI types)
+  * [Tech Libraries and Models](#Tech-Libraries-and-Models)
   * [Contributing](#Contributing)
-  * [Directory Tree](#Directory-Tree)
-  * [Tech](#Tech)
-  * [Bug / Feature Request](#bug-feature-request)
+  * [Bug / Feature Request](#Bug-/-Feature-Request)
+  * [Created By](#Created-By)
   
  ## 📜Overview
   This project is based on MBTI 16 personality which helps to identify user personality by using Twitter handle and Berst-base-uncased Model.
@@ -39,12 +38,16 @@
 ```sh
 https://github.com/mrperfectpandit/your-personality.git
 ```
-2.Make a folders in same path <br>
+2. Create virtual environment
+```sh
+conda create --name myenv
+```
+3.Make a folders in same path <br>
     👉twitter_data --> it will kept the user_personality and follower result in CSV format.
   
 The Code is written in Python 3.7.10. If you don't have Python installed you can find it [here](https://www.python.org/downloads/) and Tensorflow 2.3.1. If you are using a lower version of Python and Tensorflow you can upgrade using the pip package, ensuring you have the latest version of pip. To install the required packages and libraries, run this command in the project directory after cloning the repository:
 
-3. Install the dependencies and devDependencies and start the server.
+4. Install the dependencies and devDependencies and start the server.
 
 ```sh
 pip install -r requirements.txt
