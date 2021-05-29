@@ -48,9 +48,11 @@
  
  
 ## Results 
-| Model | Train acc. | Val acc. |  
+| Model | Train acc. | Val acc. |  |
 | :---: |:---:| :---:| :---: |
-| LSTM | 22 % | 18 % |  
+| 1D-Resnet | 99 % | 98 % |  |
+| :---: |:---:| :---:| :---: |
+| 1D-Resnet | 99 % | 98 % |  |
 
 
 
