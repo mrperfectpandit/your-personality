@@ -23,7 +23,7 @@
   * [Motivation](#Motivation)
   * [Installation and run](#Installation-and-run)
   * [what is MBTI?](#MBTI)
-  * [MBTI Types](#MBTI types)
+  * [MBTI Types](#MBTI-types)
   * [Tech Libraries and Models](#Tech-Libraries-and-Models)
   * [Contributing](#Contributing)
   * [Bug / Feature Request](#Bug-/-Feature-Request)
