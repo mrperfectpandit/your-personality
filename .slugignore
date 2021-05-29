@@ -1,3 +1,9 @@
+*.psd
+*.pdf
+/test
+/spec
+
+./bert_base_model.h5
 
 /.bundle
 
