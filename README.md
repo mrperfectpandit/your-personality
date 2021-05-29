@@ -44,7 +44,16 @@
 
 ## Video_Demo
 <!-- [![](img/demo_video_logo.png)]() -->
-  
+ 
+ 
+ 
+## Results 
+| Model | Train acc. | Val acc. 
+| :---: |:---:| :---:| :---: |
+| LSTM | 22 % | 20 % 
+| BERT | 88 % | 87 % 
+
+
  ## 🔑Installation and run
 
 1. Clone the repository 
