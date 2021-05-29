@@ -1,0 +1,2 @@
+var personality_data={'name': 'ChrisEvans', 'type': 'ISTJ', 'introvertism': 59, 'extrovertism': 40, 'intuition': 35, 'sensing': 64, 'feeling': 53, 'thinking': 46, 'judging': 43, 'perceiving': 56, 'traits': 'Systematic, Factual, Organized, Logical, Responsible', 'career': 'Military officer, Lawyer, Judge, Police Officer, Detective', 'people': 'Henry Ford, Jeff Bezos, Julia Roberts, Natalie Portman', 'per_name': 'Logistician'}
+;export {personality_data};

@@ -1,0 +1,11 @@
+.personality-item{
+    flex-basis: 200px;
+    text-align: center;
+}
+.rounded-circle{
+    width: 50px;
+    margin-right: 10px;
+}
+.d-flex{
+    align-items: center;
+}
