@@ -48,10 +48,9 @@
  
  
 ## Results 
-| Model | Train acc. | Val acc. 
+| Model | Train acc. | Val acc. |  |
 | :---: |:---:| :---:| :---: |
-| LSTM | 22 % | 20 % 
-| BERT | 88 % | 87 % 
+| 1D-Resnet | 99 % | 98 % |  |
 
 
  ## 🔑Installation and run
