@@ -3,7 +3,7 @@
 /test
 /spec
 
-./bert_base_model.h5
+./model/bert_base_model.h5
 
 /.bundle
 
