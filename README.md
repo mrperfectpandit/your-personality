@@ -32,6 +32,20 @@
  ## 📜Overview
   This project is based on MBTI 16 personality which helps to identify user personality by using Twitter handle and Berst-base-uncased Model.
   
+  
+## Samples Pictures or Demo
+
+![](img/img_4.png)  
+![](img/img_1.png)
+![](img/img_3.png)
+![](img/img_2.png)
+
+
+
+## Video_Demo
+<!-- [![](img/demo_video_logo.png)](
+https://drive.google.com/file/d/1toVkhpkSo5nT-oQo5Dq65-wTDmgZQNri/view?usp=sharing) -->
+  
  ## 🔑Installation and run
 
 1. Clone the repository 
