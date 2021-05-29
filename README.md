@@ -20,7 +20,9 @@
 
 ## 📝Table of Content
   * [Overview](#Overview)
-  * [Motivation](#Motivation)
+  * [Samples Pictures or Demo](#Samples-Pictures-or-Demo)
+  * [Video_Demo](#Video_Demo)
+  * [Results](#Results)
   * [Installation and run](#Installation-and-run)
   * [what is MBTI?](#MBTI)
   * [MBTI Types](#MBTI-types)
@@ -33,7 +35,7 @@
   This project is based on MBTI 16 personality which helps to identify user personality by using Twitter handle and Berst-base-uncased Model.
   
   
-## Samples Pictures or Demo
+## 📁Samples Pictures or Demo
 
 ![](img/img_4.png)  
 ![](img/img_1.png)
@@ -42,16 +44,16 @@
 
 
 
-## Video_Demo
+## 🎞Video_Demo
 <!-- [![](img/demo_video_logo.png)]() -->
  
  
  
-## Results 
+## 📖Results 
 | Model | Train acc. | Val acc. |  |
 | :---: |:---:| :---:| :---: |
-| 1D-Resnet | 99 % | 98 % |  |
-| 1D-Resnet | 99 % | 98 % |  |
+| 1D-Resnet | 22 % | 18 % |  |
+| 1D-Resnet | 88 % | 86 % |  |
 
 
 
