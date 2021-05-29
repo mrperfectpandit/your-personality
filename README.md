@@ -51,8 +51,7 @@
 | Model | Train acc. | Val acc. |  
 | :---: |:---:| :---:| :---: |
 | LSTM | 22 % | 18 % |  
-| :---: |:---:| :---:| :---: |
-| BERT | 88 % | 87 % | 
+
 
 
  ## 🔑Installation and run
