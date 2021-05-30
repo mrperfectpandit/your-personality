@@ -32,7 +32,8 @@
   * [Created By](#Created-By)
   
  ## 📜Overview
-  This project is based on MBTI 16 personality which helps to identify user personality by using Twitter handle and Berst-base-uncased Model.
+  👉This project is based on MBTI 16 personality which helps to identify user personality, it uses twitter API to fetch the data and BERT Model with 86 % accuracy to predict the result.<br>
+  👉It takes Twitter handle as a input and based on user tweets Predict the Personality of the user.
   
   
 ## 📁Samples Pictures or Demo
