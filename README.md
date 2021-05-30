@@ -61,11 +61,11 @@
  ## 🔑Installation and run
  
  👉Create [twitter API](https://developer.twitter.com/en) and put API keys in Scraper_tweets.py
-        Access credentials
-        consumer_key = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxx' #enter consumer key
-        consumer_secret = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' #enter consumer key secret
-        access_token = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' #enter access token
-        access_token_secret = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' #enter access token secret
+       <h6><i> Access credentials
+        consumer_key = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxx' #enter consumer key <br>
+        consumer_secret = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' #enter consumer key secret <br>
+        access_token = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' #enter access token <br>
+        access_token_secret = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' #enter access token secret <br> </i></h6>
 
 1. Clone the repository 
 ```sh
