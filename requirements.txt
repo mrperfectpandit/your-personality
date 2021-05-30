@@ -1,6 +1,6 @@
 scipy==1.5.4
 Flask==1.1.2
-tensorflow-cpu==2.3.1
+tensorflow-cpu==2.5.0
 Flask_Cors==3.0.9
 pandas==1.1.4
 numpy==1.18.5
