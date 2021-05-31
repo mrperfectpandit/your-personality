@@ -17,6 +17,7 @@
 
 ## 📈Datasets 
 [MBTI-Dataset](https://www.kaggle.com/datasnaek/mbti-type) <br>
+[BERT_model_downalod](https://drive.google.com/file/d/1QPB62y3EhOk71SmQQ2aGYfUvSzIDzdmn/view?usp=sharing)
 
 ## 📝Table of Content
   * [Overview](#Overview)
@@ -75,8 +76,10 @@ https://github.com/mrperfectpandit/your-personality.git
 ```sh
 conda create --name myenv
 ```
-3.Make a folders in same path <br>
+3.update two folders in same path <br>
     👉twitter_data --> it will kept the user_personality and follower result in CSV format.
+    👉model --> put the Pretrained weight in this folder.
+    
   
 The Code is written in Python 3.7.10. If you don't have Python installed you can find it [here](https://www.python.org/downloads/) and Tensorflow 2.3.1. If you are using a lower version of Python and Tensorflow you can upgrade using the pip package, ensuring you have the latest version of pip. To install the required packages and libraries, run this command in the project directory after cloning the repository:
 
