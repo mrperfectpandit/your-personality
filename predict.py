@@ -25,7 +25,6 @@ def clean_text(text):
 def recreate_model(): 
     input_word_ids = tf.keras.layers.Input(shape=(maxlen,), dtype=tf.int32,
                                            name="input_word_ids")
-    # bert_layer = transformers.TFBertModel.from_pretrained('bert-base-uncased')
     bert_layer = TFBertModel.from_pretrained("bert-base-uncased")
     bert_outputs = bert_layer(input_word_ids)[0]
     pred = tf.keras.layers.Dense(16, activation='softmax')(bert_outputs[:,0,:])
@@ -42,74 +41,74 @@ tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
 # new_model = load_model('model/bert_base_model.h5')
 
 def predict_type(text):
-    cleaned_ip = clean_text(text)
-    custom_test_ids = [tokenizer.encode(str(cleaned_ip))]
-    type_ind = np.argmax(new_model.predict(np.array(custom_test_ids)))
-    return (per_types[type_ind])
+    cleaned_text = clean_text(text)
+    custom_test_ids = [tokenizer.encode(str(cleaned_text))]
+    type_index = np.argmax(new_model.predict(np.array(custom_test_ids)))
+    return (per_types[type_index])
 
 def predict_tweet(username):
-    tweet_path = "twitter_data/tweets_"+str(username)+".csv"
-    tweet_csv = pd.read_csv(tweet_path)
+    df_tweet_path = "twitter_data/tweets_"+str(username)+".csv"
+    tweet_csv = pd.read_csv(df_tweet_path)
     tweet_csv = tweet_csv[["0"]]
     tweet_csv["cleaned"] = tweet_csv["0"].apply(clean_text)
     tweet_ids = [tokenizer.encode(str(i), max_length = 50 , pad_to_max_length = True) for i in tweet_csv.cleaned.values]
-    tweet_vals = new_model.predict(np.array(tweet_ids))
-    tweet_ind = tweet_vals.argmax(axis=1)
-    per_op = per_types[stats.mode(tweet_ind).mode[0]]
+    tweet_values = new_model.predict(np.array(tweet_ids))
+    tweet_index = tweet_values.argmax(axis=1)
+    per_operation = per_types[stats.mode(tweet_index).mode[0]]
     
-    op_json = {}
-    op_json["name"] = str(username)
-    op_json["type"] = str(per_op)
-    et = np.sum(tweet_vals,axis = 0)
-    summer = np.sum(et)
-    intro = np.sum(et[8:])/np.sum(et)*100
-    intui = np.sum(et[0:4]+et[8:12])/summer*100
-    feeli = np.sum(et[0:2]+et[4:6] + et[8:10] + et[12:14])/summer*100
-    judgi = np.sum(et[::2]/summer*100)
+    json_operation = {}
+    json_operation["name"] = str(username)
+    json_operation["type"] = str(per_operation)
+    predict_values = np.sum(tweet_values,axis = 0)
+    # summer = np.sum(predict_values)
+    intro = np.sum(predict_values[8:])/np.sum(predict_values)*100
+    intui = np.sum(predict_values[0:4]+predict_values[8:12])/np.sum(predict_values)*100
+    feeli = np.sum(predict_values[0:2]+predict_values[4:6] + predict_values[8:10] + predict_values[12:14])/np.sum(predict_values)*100
+    judgi = np.sum(predict_values[::2]/np.sum(predict_values)*100)
     info_df = pd.read_csv("data/MBTI_types.csv")
-    op_json["introvertism"] = int(intro)
-    op_json["extrovertism"] = int(100-intro)
-    op_json["intuition"] = int(intui)
-    op_json["sensing"] = int(100-intui)
-    op_json["feeling"] = int(feeli)
-    op_json["thinking"] = int(100-feeli)
-    op_json["judging"] = int(judgi)
-    op_json["perceiving"] = int(100-judgi)
-    op_json["traits"] = info_df[info_df["type"]==per_op]["traits"].values[0]
-    op_json["career"] = info_df[info_df["type"]==per_op]["career"].values[0]
-    op_json["people"] = info_df[info_df["type"]==per_op]["eminent personalities"].values[0]
-    op_json["per_name"] = info_df[info_df["type"]==per_op]["name"].values[0]
-    perfile = open("static/results_personality.js","w")
+    json_operation["introvertism"] = int(intro)
+    json_operation["extrovertism"] = int(100-intro)
+    json_operation["intuition"] = int(intui)
+    json_operation["sensing"] = int(100-intui)
+    json_operation["feeling"] = int(feeli)
+    json_operation["thinking"] = int(100-feeli)
+    json_operation["judging"] = int(judgi)
+    json_operation["perceiving"] = int(100-judgi)
+    json_operation["traits"] = info_df[info_df["type"]==per_operation]["traits"].values[0]
+    json_operation["career"] = info_df[info_df["type"]==per_operation]["career"].values[0]
+    json_operation["people"] = info_df[info_df["type"]==per_operation]["eminent personalities"].values[0]
+    json_operation["per_name"] = info_df[info_df["type"]==per_operation]["name"].values[0]
+    per_file = open("static/results_personality.js","w")
 
     
 
-    perstr = "var personality_data="+str(op_json)+"\n"+";export {personality_data};"
-    perfile.write(perstr)
-    perfile.close()
+    per_str = "var personality_data="+str(json_operation)+"\n"+";export {personality_data};"
+    per_file.write(per_str)
+    per_file.close()
     predict_follow(username)
-    return op_json
+    return json_operation
 
 def predict_follow(username):
-    follow_df = pd.read_csv("twitter_data/fol_"+str(username)+".csv")
+    df_follow_path = pd.read_csv("twitter_data/fol_"+str(username)+".csv")
     follow_json = {}
     follow_ids = {}
     for i in range(5):
-        list_j = follow_df.tweets.iloc[i].split(", \'")
+        list_ = df_follow_path.tweets.iloc[i].split(", \'")
         new_list = []
-        for j in list_j:
+        for j in list_:
             new_list.append(clean_text(j))
         tweet_ids = [tokenizer.encode(str(k), max_length = 100 , pad_to_max_length = True) for k in new_list]
-        tweet_vals = new_model.predict(np.array(tweet_ids))
-        tweet_ind = tweet_vals.argmax(axis=1)
-        print (per_types[stats.mode(tweet_ind).mode[0]])
-        follow_json[str(i)] = per_types[stats.mode(tweet_ind).mode[0]]
-        follow_ids[str(i)] = follow_df.follower.iloc[i]
-        perfile = open("static/results_follower.js","w")
-        perstr = "var follower_data="+str(follow_json)+"\n"
-        folstr = "var follower_ids="+str(follow_ids)+"\n"
-        perfile.write(perstr)
-        perfile.write(folstr)
-        perfile.close()
+        tweet_values = new_model.predict(np.array(tweet_ids))
+        tweet_index = tweet_values.argmax(axis=1)
+        print (per_types[stats.mode(tweet_index).mode[0]])
+        follow_json[str(i)] = per_types[stats.mode(tweet_index).mode[0]]
+        follow_ids[str(i)] = df_follow_path.follower.iloc[i]
+        per_file = open("static/results_follower.js","w")
+        per_str = "var follower_data="+str(follow_json)+"\n"
+        follow_str = "var follower_ids="+str(follow_ids)+"\n"
+        per_file.write(per_str)
+        per_file.write(follow_str)
+        per_file.close()
     return follow_json
     
 
