@@ -77,7 +77,7 @@ https://github.com/mrperfectpandit/your-personality.git
 conda create --name myenv
 ```
 3.update two folders in same path <br>
-    👉twitter_data --> it will kept the user_personality and follower result in CSV format.
+    👉twitter_data --> it will kept the user_personality and follower result in CSV format.<br>
     👉model --> put the Pretrained weight in this folder.
     
   
