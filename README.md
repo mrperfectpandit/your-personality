@@ -47,7 +47,7 @@
 
 
 ## 🎞Video_Demo
-<!-- [![](img/demo_video_logo.png)]() -->
+![video_demo](img/ezgif.com-gif-maker.gif)
  
  
  
